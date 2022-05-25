@@ -1,36 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Quiz</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
 </head>
+
 <body>
-  <section id="start">
-    <h2>Start Quiz</h2>
-    <button>Begin</button>
-  </section>
-  <section id="quiz">
-    <h2 id="title">Questions</h2>
-    <div id="questions">
+    <section id="start">
+        <h2>Start Quiz</h2>
+        <button>Begin</button>
+    </section>
+    <section id="quiz">
+        <h2 id="title">Questions</h2>
+        <div id="question1">
+            <p>
+                The correct answer is C?
+                <button class="question1-buttonA"> A </button>
+                <button class="question1-buttonB"> B </button>
+                <button class="question1-buttonC"> C </button>
+                <button class="question1-buttonD"> D </button>
 
-    </div>
-  </section>
-  <section id="end">
-    <h2>Enter Initials</h2>
-    <input type="text" />
-    <button>Submit</button>
-  </section>
+            </p>
+        </div>
+
+        <div id="question2">
+            <p>
+                The correct answer is B?
+                <button class="question2-buttonA"> A </button>
+                <button class="question2-buttonB"> B </button>
+                <button class="question2-buttonC"> C </button>
+                <button class="question2-buttonD"> D </button>
+
+            </p>
 
 
-<script 
-src="./style.js"> 
-</script>
+        </div>
+
+
+
+    </section>
+
+    <section id="score-and-initials-page">
+        <h2> Your Score =
+            <span id="score-display-on-end-screen">
+
+            </span>
+
+        </h2>
+        <h3>Enter Initials to Add Score</h3>
+        <input type="text" />
+        <button>Submit</button>
+    </section>
+
+
+
+    <section id="scores-window">
+        <h2> Your Scores =
+            <span id="score-display-on-scores-window">
+
+            </span>
+
+        </h2>
+
+        <button>End</button>
+        <button>Go Again</button>
+
+    </section>
+
+
+    <script src="./style.js">
+    </script>
 
 
 
 </body>
+
 </html>
-
-
