@@ -16,7 +16,7 @@ var quizTitle = document.querySelector("#quiz #title");
 //BUTTONS!!!!!!!!!!!!!!
 //BUTTONS!!!!!!!!!!!!!!
 //Start button
-var startBtn = document.querySelector("#start button");
+var startButton = document.querySelector("#start button");
 
 //Question 1 buttons
 var question1ButtonA = document.querySelector("#question1-buttonA button")
@@ -30,6 +30,11 @@ var question2ButtonB = document.querySelector("#question2-buttonB button")
 var question2ButtonC = document.querySelector("#question2-buttonC button")
 var question2ButtonD = document.querySelector("#question2-buttonD button")
 
+//Score and initials page button
+var scoreAndInitialsPageButton = document.querySelector("#score-and-initials-page button")
+
+//Scores window buttons 
+var scoresWindowButton = document.querySelector("#scores-window button")
 
 
 
@@ -88,7 +93,7 @@ function init() {
     displayState();
 }
 
-startBtn.addEventListener("click", function () {
+startButton.addEventListener("click", function () {
     state = 'question1';
     displayState();
 });
@@ -100,6 +105,16 @@ quizQuestion1El.addEventListener("click", function () {
 
 quizQuestion2El.addEventListener("click", function () {
     state = 'scores-and-initials-page';
+    displayState();
+});
+
+scoreAndInitialsPageButton.addEventListener("click", function () {
+    state = 'scores-window';
+    displayState();
+});
+
+scoresWindowButton.addEventListener("click", function () {
+    state = 'start';
     displayState();
 });
 
