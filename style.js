@@ -51,13 +51,13 @@ var scoresWindowEL = document.querySelector("#scores-window");
 //Start button
 var startButton = document.querySelector("#start-window button");
 
-//Question 1 buttons (C is correct)
-var question1ButtonB = document.querySelector("#question1-buttonB button")
+//Question 1 buttons
 var question1ButtonA = document.querySelector("#question1-buttonA button")
+var question1ButtonB = document.querySelector("#question1-buttonB button")
 var question1ButtonC = document.querySelector("#question1-buttonC button")
 var question1ButtonD = document.querySelector("#question1-buttonD button")
 
-//Question 2 buttons (B is correct)
+//Question 2 buttons
 var question2ButtonA = document.querySelector("#question2-buttonA button")
 var question2ButtonB = document.querySelector("#question2-buttonB button")
 var question2ButtonC = document.querySelector("#question2-buttonC button")
@@ -82,7 +82,7 @@ function setTheTimer() {
 
     timeDisplay();
     //setInterval is a thing...  Its built in.
-    var secondsLeft = 100;
+    var secondsLeft = 10;
     var timerInterval = setInterval(
         function () {
             secondsLeft--;
@@ -104,21 +104,11 @@ function setTheTimer() {
                 clearInterval(timerInterval);
             }
 
+        }, 1000);
 
-
-
-
-            // if all([question1ButtonA, question1ButtonB, question1ButtonD, question2ButtonA, 
-            // question2ButtonC, question2ButtonD]);
-
-
-            
-
-}, 1000);
-
-function timeDisplay() {
-    theTimerWindowEl.textContent = "You have " + secondsLeft + " seconds left until the game ends";
-}
+    function timeDisplay() {
+        theTimerWindowEl.textContent = "You have " + secondsLeft + " seconds left until the game ends";
+    }
 
 }
 
