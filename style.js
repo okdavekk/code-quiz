@@ -3,10 +3,10 @@
 //START: to indicate what window to start at or to toggle
 
 var startState = (
-    "start"
-    // "question1"
-    // "question2"
-    // "scores-and-initials-page"
+    "start-window"
+    // "question1-window"
+    // "question2-window"
+    // "scores-and-initials-window"
     // "scores-window"
 )
 
@@ -21,13 +21,13 @@ var startState = (
 //START: Class tie ins from HTML to js variables
 
 //Start Window tie in from HTML to variable
-var startStateEL = document.querySelector("#start");
+var startStateWindowEL = document.querySelector("#start-window");
 //Quiz question 1 tie in from HTML to variable
-var quizQuestion1El = document.querySelector("#question1");
+var quizQuestion1WindowEl = document.querySelector("#question1-window");
 //Quiz question 2 tie in from HTML to variable
-var quizQuestion2El = document.querySelector("#question2");
+var quizQuestion2WindowEl = document.querySelector("#question2-window");
 // Score and initials tie in from HTML to variable
-var scoreAndInitialsPageEL = document.querySelector("#score-and-initials-page");
+var scoreAndInitialsWindowEL = document.querySelector("#score-and-initials-window");
 // Score aggregate window tie in from HTML to variable
 var scoresWindowEL = document.querySelector("#scores-window");
 // Score and initials tie in from HTML to variable
@@ -44,7 +44,7 @@ var scoresWindowEL = document.querySelector("#scores-window");
 //START: Button tie ins from HTML to js variables
 
 //Start button
-var startButton = document.querySelector("#start button");
+var startButton = document.querySelector("#start-window button");
 
 //Question 1 buttons
 var question1ButtonA = document.querySelector("#question1-buttonA button")
@@ -59,7 +59,7 @@ var question2ButtonC = document.querySelector("#question2-buttonC button")
 var question2ButtonD = document.querySelector("#question2-buttonD button")
 
 //Score and initials page button
-var scoreAndInitialsPageButton = document.querySelector("#score-and-initials-page button")
+var scoreAndInitialsPageButton = document.querySelector("#score-and-initials-window button")
 
 //Scores window buttons 
 var scoresWindowButton = document.querySelector("#scores-window button")
@@ -74,47 +74,47 @@ var scoresWindowButton = document.querySelector("#scores-window button")
 //START: Window toggle scheme
 //START: Window toggle scheme
 function displayWindows() {
-    if (startState === 'start') {
-        startStateEL.style.display = 'block';
-        quizQuestion1El.style.display = 'none';
-        quizQuestion2El.style.display = 'none';
-        scoreAndInitialsPageEL.style.display = 'none';
+    if (startState === 'start-window') {
+        startStateWindowEL.style.display = 'block';
+        quizQuestion1WindowEl.style.display = 'none';
+        quizQuestion2WindowEl.style.display = 'none';
+        scoreAndInitialsWindowEL.style.display = 'none';
         scoresWindowEL.style.display = 'none';
 
     }
 
-    if (startState === 'question1') {
-        startStateEL.style.display = 'none';
-        quizQuestion1El.style.display = 'block';
-        quizQuestion2El.style.display = 'none';
-        scoreAndInitialsPageEL.style.display = 'none';
+    if (startState === 'question1-window') {
+        startStateWindowEL.style.display = 'none';
+        quizQuestion1WindowEl.style.display = 'block';
+        quizQuestion2WindowEl.style.display = 'none';
+        scoreAndInitialsWindowEL.style.display = 'none';
         scoresWindowEL.style.display = 'none';
 
     }
 
-    if (startState === 'question2') {
-        startStateEL.style.display = 'none';
-        quizQuestion1El.style.display = 'none';
-        quizQuestion2El.style.display = 'block';
-        scoreAndInitialsPageEL.style.display = 'none';
+    if (startState === 'question2-window') {
+        startStateWindowEL.style.display = 'none';
+        quizQuestion1WindowEl.style.display = 'none';
+        quizQuestion2WindowEl.style.display = 'block';
+        scoreAndInitialsWindowEL.style.display = 'none';
         scoresWindowEL.style.display = 'none';
 
     }
 
-    if (startState === 'scores-and-initials-page') {
-        startStateEL.style.display = 'none';
-        quizQuestion1El.style.display = 'none';
-        quizQuestion2El.style.display = 'none';
-        scoreAndInitialsPageEL.style.display = 'block';
+    if (startState === 'scores-and-initials-window') {
+        startStateWindowEL.style.display = 'none';
+        quizQuestion1WindowEl.style.display = 'none';
+        quizQuestion2WindowEl.style.display = 'none';
+        scoreAndInitialsWindowEL.style.display = 'block';
         scoresWindowEL.style.display = 'none';
 
     }
 
     if (startState === 'scores-window') {
-        startStateEL.style.display = 'none';
-        quizQuestion1El.style.display = 'none';
-        quizQuestion2El.style.display = 'none';
-        scoreAndInitialsPageEL.style.display = 'none';
+        startStateWindowEL.style.display = 'none';
+        quizQuestion1WindowEl.style.display = 'none';
+        quizQuestion2WindowEl.style.display = 'none';
+        scoreAndInitialsWindowEL.style.display = 'none';
         scoresWindowEL.style.display = 'block';
 
     }
@@ -135,17 +135,17 @@ function init() {
 }
 
 startButton.addEventListener("click", function () {
-    startState = 'question1';
+    startState = 'question1-window';
     displayWindows();
 });
 
-quizQuestion1El.addEventListener("click", function () {
-    startState = 'question2';
+quizQuestion1WindowEl.addEventListener("click", function () {
+    startState = 'question2-window';
     displayWindows();
 });
 
-quizQuestion2El.addEventListener("click", function () {
-    startState = 'scores-and-initials-page';
+quizQuestion2WindowEl.addEventListener("click", function () {
+    startState = 'scores-and-initials-window';
     displayWindows();
 });
 
@@ -155,7 +155,7 @@ scoreAndInitialsPageButton.addEventListener("click", function () {
 });
 
 scoresWindowButton.addEventListener("click", function () {
-    startState = 'start';
+    startState = 'start-window';
     displayWindows();
 });
 
@@ -165,51 +165,11 @@ scoresWindowButton.addEventListener("click", function () {
 
 
 
+
+
+
+
+
+
+//Go Go Go
 init();
-
-
-
-
-
-// //Provided by Anthony.  Thank you!
-// var state = 'start';
-
-// var startEl = document.querySelector("#start");
-// var quizEl = document.querySelector("#quiz");
-// var endEl = document.querySelector("#end");
-// var startBtn = document.querySelector("#start button");
-// var quizTitle = document.querySelector("#quiz #title");
-
-// function displayState() {
-//   if (state === 'start') {
-//     startEl.style.display = 'block';
-//     quizEl.style.display = 'none';
-//     endEl.style.display = 'none';
-//   }
-//   if (state === 'quiz') {
-//     startEl.style.display = 'none';
-//     quizEl.style.display = 'block';
-//     endEl.style.display = 'none';
-//   }
-//   if (state === 'end') {
-//     startEl.style.display = 'none';
-//     quizEl.style.display = 'none';
-//     endEl.style.display = 'block';
-//   }
-// }
-
-// function init() {
-//   displayState();
-// }
-
-// startBtn.addEventListener("click", function() {
-//   state = 'quiz';
-//   displayState();
-// });
-
-// quizTitle.addEventListener("click", function () {
-//   state = 'end';
-//   displayState();
-// });
-
-// init();
