@@ -1,20 +1,48 @@
-var startState = 'start';
-// // var startState = 'question1';
-// // var startState = 'question2';
-// // var startState = 'end';
+//START: Variables to indicate what window to start at or to toggle
+//START: to indicate what window to start at or to toggle
+//START: to indicate what window to start at or to toggle
+
+var startState = (
+    "start"
+    // "question1"
+    // "question2"
+    // "scores-and-initials-page"
+    // "scores-window"
+)
+
+//END: to indicate what window to start at or to toggle
+//END: to indicate what window to start at or to toggle
+//END: to indicate what window to start at or to toggle
 
 
-var startEl = document.querySelector("#start");
+
+//START: Class tie ins from HTML to js variables
+//START: Class tie ins from HTML to js variables
+//START: Class tie ins from HTML to js variables
+
+//Start Window tie in from HTML to variable
+var startStateEL = document.querySelector("#start");
+//Quiz question 1 tie in from HTML to variable
 var quizQuestion1El = document.querySelector("#question1");
+//Quiz question 2 tie in from HTML to variable
 var quizQuestion2El = document.querySelector("#question2");
-var scoreAndInitialsPage = document.querySelector("#score-and-initials-page");
-var scoresWindow = document.querySelector("#scores-window");
-var quizTitle = document.querySelector("#quiz #title");
+// Score and initials tie in from HTML to variable
+var scoreAndInitialsPageEL = document.querySelector("#score-and-initials-page");
+// Score aggregate window tie in from HTML to variable
+var scoresWindowEL = document.querySelector("#scores-window");
+// Score and initials tie in from HTML to variable
+// var quizTitle = document.querySelector("#quiz #title");
+
+//END: Class tie ins from HTML to js variables
+//END: Class tie ins from HTML to js variables
+//END: Class tie ins from HTML to js variables
 
 
-//BUTTONS!!!!!!!!!!!!!!
-//BUTTONS!!!!!!!!!!!!!!
-//BUTTONS!!!!!!!!!!!!!!
+
+//START: Button tie ins from HTML to js variables
+//START: Button tie ins from HTML to js variables
+//START: Button tie ins from HTML to js variables
+
 //Start button
 var startButton = document.querySelector("#start button");
 
@@ -36,58 +64,71 @@ var scoreAndInitialsPageButton = document.querySelector("#score-and-initials-pag
 //Scores window buttons 
 var scoresWindowButton = document.querySelector("#scores-window button")
 
+//END: Button tie ins from HTML to js variables
+//END: Button tie ins from HTML to js variables
+//END: Button tie ins from HTML to js variables
 
 
 
+//START: Window toggle scheme
+//START: Window toggle scheme
+//START: Window toggle scheme
 function displayWindows() {
     if (startState === 'start') {
-        startEl.style.display = 'block';
+        startStateEL.style.display = 'block';
         quizQuestion1El.style.display = 'none';
         quizQuestion2El.style.display = 'none';
-        scoreAndInitialsPage.style.display = 'none';
-        scoresWindow.style.display = 'none';
+        scoreAndInitialsPageEL.style.display = 'none';
+        scoresWindowEL.style.display = 'none';
 
     }
+
     if (startState === 'question1') {
-        startEl.style.display = 'none';
+        startStateEL.style.display = 'none';
         quizQuestion1El.style.display = 'block';
         quizQuestion2El.style.display = 'none';
-        scoreAndInitialsPage.style.display = 'none';
-        scoresWindow.style.display = 'none';
+        scoreAndInitialsPageEL.style.display = 'none';
+        scoresWindowEL.style.display = 'none';
 
     }
 
     if (startState === 'question2') {
-        startEl.style.display = 'none';
+        startStateEL.style.display = 'none';
         quizQuestion1El.style.display = 'none';
         quizQuestion2El.style.display = 'block';
-        scoreAndInitialsPage.style.display = 'none';
-        scoresWindow.style.display = 'none';
+        scoreAndInitialsPageEL.style.display = 'none';
+        scoresWindowEL.style.display = 'none';
 
     }
 
-
     if (startState === 'scores-and-initials-page') {
-        startEl.style.display = 'none';
+        startStateEL.style.display = 'none';
         quizQuestion1El.style.display = 'none';
         quizQuestion2El.style.display = 'none';
-        scoreAndInitialsPage.style.display = 'block';
-        scoresWindow.style.display = 'none';
+        scoreAndInitialsPageEL.style.display = 'block';
+        scoresWindowEL.style.display = 'none';
 
     }
 
     if (startState === 'scores-window') {
-        startEl.style.display = 'none';
+        startStateEL.style.display = 'none';
         quizQuestion1El.style.display = 'none';
         quizQuestion2El.style.display = 'none';
-        scoreAndInitialsPage.style.display = 'none';
-        scoresWindow.style.display = 'block';
+        scoreAndInitialsPageEL.style.display = 'none';
+        scoresWindowEL.style.display = 'block';
 
     }
 
-
-
 }
+
+//END: Window toggle scheme
+//END: Window toggle scheme
+//END: Window toggle scheme
+
+
+//START: Button click listening scheme
+//START: Button click listening scheme
+//START: Button click listening scheme
 
 function init() {
     displayWindows();
@@ -117,6 +158,12 @@ scoresWindowButton.addEventListener("click", function () {
     startState = 'start';
     displayWindows();
 });
+
+//END: Button click listening scheme
+//END: Button click listening scheme
+//END: Button click listening scheme
+
+
 
 init();
 
