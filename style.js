@@ -24,8 +24,7 @@ var startState = (
 var startStateWindowEL = document.querySelector("#start-window");
 
 //Timer tie in from HTML to variable
-var theTimerEl = document.querySelector("#timer");
-var secondsLeft = 10;
+var theTimerWindowEl = document.querySelector("#timer");
 
 //Quiz question 1 tie in from HTML to variable
 var quizQuestion1WindowEl = document.querySelector("#question1-window");
@@ -79,14 +78,11 @@ var scoresWindowButton = document.querySelector("#scores-window button")
 //START: Timer function
 //START: Timer function
 
-
-function timeDisplay() {
-    theTimerEl.textContent = "You have " + secondsLeft + " seconds left until the game ends";
-}
-
 function setTheTimer() {
+
     timeDisplay();
     //setInterval is a thing...  Its built in.
+    var secondsLeft = 10;
     var timerInterval = setInterval(
         function () {
             secondsLeft--;
@@ -96,7 +92,7 @@ function setTheTimer() {
                 alert("Try Again");
                 clearInterval(timerInterval);
                 startStateWindowEL.style.display = "block";
-                theTimerEl.style.display = "none";
+                theTimerWindowEl.style.display = "none";
                 quizQuestion1WindowEl.style.display = "none";
                 quizQuestion2WindowEl.style.display = "none";
                 scoreAndInitialsWindowEL.style.display = "none";
@@ -108,8 +104,11 @@ function setTheTimer() {
                 clearInterval(timerInterval);
             }
 
-
         }, 1000);
+
+    function timeDisplay() {
+        theTimerWindowEl.textContent = "You have " + secondsLeft + " seconds left until the game ends";
+    }
 
 }
 
@@ -125,7 +124,7 @@ function setTheTimer() {
 function displayWindows() {
     if (startState === "start-window") {
         startStateWindowEL.style.display = "block";
-        theTimerEl.style.display = "none";
+        theTimerWindowEl.style.display = "none";
         quizQuestion1WindowEl.style.display = "none";
         quizQuestion2WindowEl.style.display = "none";
         scoreAndInitialsWindowEL.style.display = "none";
@@ -135,7 +134,7 @@ function displayWindows() {
 
     if (startState === "question1-window") {
         startStateWindowEL.style.display = "none";
-        theTimerEl.style.display = "block";
+        theTimerWindowEl.style.display = "block";
         quizQuestion1WindowEl.style.display = "block";
         quizQuestion2WindowEl.style.display = "none";
         scoreAndInitialsWindowEL.style.display = "none";
@@ -145,7 +144,7 @@ function displayWindows() {
 
     if (startState === "question2-window") {
         startStateWindowEL.style.display = "none";
-        theTimerEl.style.display = "block";
+        theTimerWindowEl.style.display = "block";
         quizQuestion1WindowEl.style.display = "none";
         quizQuestion2WindowEl.style.display = "block";
         scoreAndInitialsWindowEL.style.display = "none";
@@ -155,7 +154,7 @@ function displayWindows() {
 
     if (startState === "scores-and-initials-window") {
         startStateWindowEL.style.display = "none";
-        theTimerEl.style.display = "none";
+        theTimerWindowEl.style.display = "none";
         quizQuestion1WindowEl.style.display = "none";
         quizQuestion2WindowEl.style.display = "none";
         scoreAndInitialsWindowEL.style.display = "block";
@@ -165,7 +164,7 @@ function displayWindows() {
 
     if (startState === "scores-window") {
         startStateWindowEL.style.display = "none";
-        theTimerEl.style.display = "none";
+        theTimerWindowEl.style.display = "none";
         quizQuestion1WindowEl.style.display = "none";
         quizQuestion2WindowEl.style.display = "none";
         scoreAndInitialsWindowEL.style.display = "none";
@@ -203,6 +202,8 @@ quizQuestion1WindowEl.addEventListener("click", function () {
 quizQuestion2WindowEl.addEventListener("click", function () {
     startState = "scores-and-initials-window";
     displayWindows();
+    // clearInterval(timerInterval);
+
 });
 
 scoreAndInitialsPageButton.addEventListener("click", function () {
