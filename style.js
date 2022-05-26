@@ -24,7 +24,7 @@ var startState = (
 var startStateWindowEL = document.querySelector("#start-window");
 
 //Timer tie in from HTML to variable
-var theTimerEl = document.querySelector("timer");
+var theTimerEl = document.querySelector("#timer");
 var secondsLeft = 60;
 
 //Quiz question 1 tie in from HTML to variable
@@ -79,23 +79,24 @@ var scoresWindowButton = document.querySelector("#scores-window button")
 //START: Timer function
 //START: Timer function
 
+
 function timeDisplay() {
-    theTimerEl.textContent = "You have" + secondsLeft + "left until the game ends";
+    theTimerEl.textContent = "You have " + secondsLeft + " seconds left until the game ends";
 }
 
 function setTheTimer() {
     timeDisplay();
-    var timerInterval = setTheInterval(
+    //setInterval is a thing...  Its built in.
+    var timerInterval = setInterval(
         function () {
-        secondsLeft--;
-        displayMessage();
+            secondsLeft--;
+            timeDisplay();
 
-        if (secondsLeft === 0) {
-            clearInterval(timerInterval);
+            if (secondsLeft === 0) {
+                clearInterval(timerInterval);
 
-        }
-    }, 1000);
-    setTheTimer();
+            }
+        }, 1000);
 
 }
 
@@ -172,7 +173,10 @@ function init() {
 startButton.addEventListener("click", function () {
     startState = 'question1-window';
     displayWindows();
+    setTheTimer();
+
 });
+
 
 quizQuestion1WindowEl.addEventListener("click", function () {
     startState = 'question2-window';
@@ -200,13 +204,6 @@ scoresWindowButton.addEventListener("click", function () {
 
 
 
-
-
-
-
-
-
 //Go Go Go
-// setTheTimer()
 init();
 
