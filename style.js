@@ -16,6 +16,21 @@ var startState = (
 
 
 
+
+//START: Other variables
+//START: Other variables
+//START: Other variables
+
+var secondsLeft = 100;
+
+//END: Other variables
+//END: Other variables
+//END: Other variables
+
+
+
+
+
 //START: Class tie ins from HTML to js variables
 //START: Class tie ins from HTML to js variables
 //START: Class tie ins from HTML to js variables
@@ -82,7 +97,6 @@ function setTheTimer() {
 
     timeDisplay();
     //setInterval is a thing...  Its built in.
-    var secondsLeft = 10;
     var timerInterval = setInterval(
         function () {
             secondsLeft--;
@@ -108,9 +122,11 @@ function setTheTimer() {
 
     function timeDisplay() {
         theTimerWindowEl.textContent = "You have " + secondsLeft + " seconds left until the game ends";
+
     }
 
 }
+
 
 
 //START: Timer function
@@ -197,12 +213,13 @@ startButton.addEventListener("click", function () {
 quizQuestion1WindowEl.addEventListener("click", function () {
     startState = "question2-window";
     displayWindows();
+
+
 });
 
 quizQuestion2WindowEl.addEventListener("click", function () {
     startState = "scores-and-initials-window";
     displayWindows();
-    // clearInterval(timerInterval);
 
 });
 
@@ -219,6 +236,20 @@ scoresWindowButton.addEventListener("click", function () {
 //END: Button click listening scheme
 //END: Button click listening scheme
 //END: Button click listening scheme
+
+
+
+
+
+
+
+
+
+// question1ButtonA.addEventListener("click", function () {
+//     secondsLeft -= 5;
+
+// });
+
 
 
 
