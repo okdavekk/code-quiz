@@ -22,16 +22,22 @@ var startState = (
 
 //Start Window tie in from HTML to variable
 var startStateWindowEL = document.querySelector("#start-window");
+
+//Timer tie in from HTML to variable
+var theTimerEl = document.querySelector("timer");
+var secondsLeft = 60;
+
 //Quiz question 1 tie in from HTML to variable
 var quizQuestion1WindowEl = document.querySelector("#question1-window");
+
 //Quiz question 2 tie in from HTML to variable
 var quizQuestion2WindowEl = document.querySelector("#question2-window");
+
 // Score and initials tie in from HTML to variable
 var scoreAndInitialsWindowEL = document.querySelector("#score-and-initials-window");
+
 // Score aggregate window tie in from HTML to variable
 var scoresWindowEL = document.querySelector("#scores-window");
-// Score and initials tie in from HTML to variable
-// var quizTitle = document.querySelector("#quiz #title");
 
 //END: Class tie ins from HTML to js variables
 //END: Class tie ins from HTML to js variables
@@ -68,6 +74,35 @@ var scoresWindowButton = document.querySelector("#scores-window button")
 //END: Button tie ins from HTML to js variables
 //END: Button tie ins from HTML to js variables
 
+
+//START: Timer function
+//START: Timer function
+//START: Timer function
+
+function timeDisplay() {
+    theTimerEl.textContent = "You have" + secondsLeft + "left until the game ends";
+}
+
+function setTheTimer() {
+    timeDisplay();
+    var timerInterval = setTheInterval(
+        function () {
+        secondsLeft--;
+        displayMessage();
+
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
+
+        }
+    }, 1000);
+    setTheTimer();
+
+}
+
+
+//START: Timer function
+//START: Timer function
+//START: Timer function
 
 
 //START: Window toggle scheme
@@ -172,4 +207,6 @@ scoresWindowButton.addEventListener("click", function () {
 
 
 //Go Go Go
+// setTheTimer()
 init();
+
