@@ -25,7 +25,7 @@ var startStateWindowEL = document.querySelector("#start-window");
 
 //Timer tie in from HTML to variable
 var theTimerEl = document.querySelector("#timer");
-var secondsLeft = 60;
+var secondsLeft = 2;
 
 //Quiz question 1 tie in from HTML to variable
 var quizQuestion1WindowEl = document.querySelector("#question1-window");
@@ -93,7 +93,13 @@ function setTheTimer() {
             timeDisplay();
 
             if (secondsLeft === 0) {
+                alert("Try Again");
                 clearInterval(timerInterval);
+                startStateWindowEL.style.display = 'block';
+                quizQuestion1WindowEl.style.display = 'none';
+                quizQuestion2WindowEl.style.display = 'none';
+                scoreAndInitialsWindowEL.style.display = 'none';
+                scoresWindowEL.style.display = 'none';
 
             }
         }, 1000);
