@@ -125,7 +125,7 @@ function setTheTimer() {
 function displayWindows() {
     if (startState === "start-window") {
         startStateWindowEL.style.display = "block";
-        theTimerEl.style.display = "block";
+        theTimerEl.style.display = "none";
         quizQuestion1WindowEl.style.display = "none";
         quizQuestion2WindowEl.style.display = "none";
         scoreAndInitialsWindowEL.style.display = "none";
