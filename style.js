@@ -1,7 +1,7 @@
-var state = 'start';
-// // var state = 'question1';
-// // var state = 'question2';
-// // var state = 'end';
+var startState = 'start';
+// // var startState = 'question1';
+// // var startState = 'question2';
+// // var startState = 'end';
 
 
 var startEl = document.querySelector("#start");
@@ -39,8 +39,8 @@ var scoresWindowButton = document.querySelector("#scores-window button")
 
 
 
-function displayState() {
-    if (state === 'start') {
+function displayWindows() {
+    if (startState === 'start') {
         startEl.style.display = 'block';
         quizQuestion1El.style.display = 'none';
         quizQuestion2El.style.display = 'none';
@@ -48,7 +48,7 @@ function displayState() {
         scoresWindow.style.display = 'none';
 
     }
-    if (state === 'question1') {
+    if (startState === 'question1') {
         startEl.style.display = 'none';
         quizQuestion1El.style.display = 'block';
         quizQuestion2El.style.display = 'none';
@@ -57,7 +57,7 @@ function displayState() {
 
     }
 
-    if (state === 'question2') {
+    if (startState === 'question2') {
         startEl.style.display = 'none';
         quizQuestion1El.style.display = 'none';
         quizQuestion2El.style.display = 'block';
@@ -67,7 +67,7 @@ function displayState() {
     }
 
 
-    if (state === 'scores-and-initials-page') {
+    if (startState === 'scores-and-initials-page') {
         startEl.style.display = 'none';
         quizQuestion1El.style.display = 'none';
         quizQuestion2El.style.display = 'none';
@@ -76,7 +76,7 @@ function displayState() {
 
     }
 
-    if (state === 'scores-window') {
+    if (startState === 'scores-window') {
         startEl.style.display = 'none';
         quizQuestion1El.style.display = 'none';
         quizQuestion2El.style.display = 'none';
@@ -90,32 +90,32 @@ function displayState() {
 }
 
 function init() {
-    displayState();
+    displayWindows();
 }
 
 startButton.addEventListener("click", function () {
-    state = 'question1';
-    displayState();
+    startState = 'question1';
+    displayWindows();
 });
 
 quizQuestion1El.addEventListener("click", function () {
-    state = 'question2';
-    displayState();
+    startState = 'question2';
+    displayWindows();
 });
 
 quizQuestion2El.addEventListener("click", function () {
-    state = 'scores-and-initials-page';
-    displayState();
+    startState = 'scores-and-initials-page';
+    displayWindows();
 });
 
 scoreAndInitialsPageButton.addEventListener("click", function () {
-    state = 'scores-window';
-    displayState();
+    startState = 'scores-window';
+    displayWindows();
 });
 
 scoresWindowButton.addEventListener("click", function () {
-    state = 'start';
-    displayState();
+    startState = 'start';
+    displayWindows();
 });
 
 init();
