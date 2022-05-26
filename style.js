@@ -25,7 +25,7 @@ var startStateWindowEL = document.querySelector("#start-window");
 
 //Timer tie in from HTML to variable
 var theTimerEl = document.querySelector("#timer");
-var secondsLeft = 2;
+var secondsLeft = 10;
 
 //Quiz question 1 tie in from HTML to variable
 var quizQuestion1WindowEl = document.querySelector("#question1-window");
@@ -95,13 +95,20 @@ function setTheTimer() {
             if (secondsLeft === 0) {
                 alert("Try Again");
                 clearInterval(timerInterval);
-                startStateWindowEL.style.display = 'block';
-                quizQuestion1WindowEl.style.display = 'none';
-                quizQuestion2WindowEl.style.display = 'none';
-                scoreAndInitialsWindowEL.style.display = 'none';
-                scoresWindowEL.style.display = 'none';
+                startStateWindowEL.style.display = "block";
+                theTimerEl.style.display = "none";
+                quizQuestion1WindowEl.style.display = "none";
+                quizQuestion2WindowEl.style.display = "none";
+                scoreAndInitialsWindowEL.style.display = "none";
+                scoresWindowEL.style.display = "none";
 
             }
+
+            if (startState === "scores-and-initials-window") {
+                clearInterval(timerInterval);
+            }
+
+
         }, 1000);
 
 }
@@ -116,48 +123,53 @@ function setTheTimer() {
 //START: Window toggle scheme
 //START: Window toggle scheme
 function displayWindows() {
-    if (startState === 'start-window') {
-        startStateWindowEL.style.display = 'block';
-        quizQuestion1WindowEl.style.display = 'none';
-        quizQuestion2WindowEl.style.display = 'none';
-        scoreAndInitialsWindowEL.style.display = 'none';
-        scoresWindowEL.style.display = 'none';
+    if (startState === "start-window") {
+        startStateWindowEL.style.display = "block";
+        theTimerEl.style.display = "block";
+        quizQuestion1WindowEl.style.display = "none";
+        quizQuestion2WindowEl.style.display = "none";
+        scoreAndInitialsWindowEL.style.display = "none";
+        scoresWindowEL.style.display = "none";
 
     }
 
-    if (startState === 'question1-window') {
-        startStateWindowEL.style.display = 'none';
-        quizQuestion1WindowEl.style.display = 'block';
-        quizQuestion2WindowEl.style.display = 'none';
-        scoreAndInitialsWindowEL.style.display = 'none';
-        scoresWindowEL.style.display = 'none';
+    if (startState === "question1-window") {
+        startStateWindowEL.style.display = "none";
+        theTimerEl.style.display = "block";
+        quizQuestion1WindowEl.style.display = "block";
+        quizQuestion2WindowEl.style.display = "none";
+        scoreAndInitialsWindowEL.style.display = "none";
+        scoresWindowEL.style.display = "none";
 
     }
 
-    if (startState === 'question2-window') {
-        startStateWindowEL.style.display = 'none';
-        quizQuestion1WindowEl.style.display = 'none';
-        quizQuestion2WindowEl.style.display = 'block';
-        scoreAndInitialsWindowEL.style.display = 'none';
-        scoresWindowEL.style.display = 'none';
+    if (startState === "question2-window") {
+        startStateWindowEL.style.display = "none";
+        theTimerEl.style.display = "block";
+        quizQuestion1WindowEl.style.display = "none";
+        quizQuestion2WindowEl.style.display = "block";
+        scoreAndInitialsWindowEL.style.display = "none";
+        scoresWindowEL.style.display = "none";
 
     }
 
-    if (startState === 'scores-and-initials-window') {
-        startStateWindowEL.style.display = 'none';
-        quizQuestion1WindowEl.style.display = 'none';
-        quizQuestion2WindowEl.style.display = 'none';
-        scoreAndInitialsWindowEL.style.display = 'block';
-        scoresWindowEL.style.display = 'none';
+    if (startState === "scores-and-initials-window") {
+        startStateWindowEL.style.display = "none";
+        theTimerEl.style.display = "none";
+        quizQuestion1WindowEl.style.display = "none";
+        quizQuestion2WindowEl.style.display = "none";
+        scoreAndInitialsWindowEL.style.display = "block";
+        scoresWindowEL.style.display = "none";
 
     }
 
-    if (startState === 'scores-window') {
-        startStateWindowEL.style.display = 'none';
-        quizQuestion1WindowEl.style.display = 'none';
-        quizQuestion2WindowEl.style.display = 'none';
-        scoreAndInitialsWindowEL.style.display = 'none';
-        scoresWindowEL.style.display = 'block';
+    if (startState === "scores-window") {
+        startStateWindowEL.style.display = "none";
+        theTimerEl.style.display = "none";
+        quizQuestion1WindowEl.style.display = "none";
+        quizQuestion2WindowEl.style.display = "none";
+        scoreAndInitialsWindowEL.style.display = "none";
+        scoresWindowEL.style.display = "block";
 
     }
 
@@ -177,30 +189,29 @@ function init() {
 }
 
 startButton.addEventListener("click", function () {
-    startState = 'question1-window';
+    startState = "question1-window";
     displayWindows();
     setTheTimer();
 
 });
 
-
 quizQuestion1WindowEl.addEventListener("click", function () {
-    startState = 'question2-window';
+    startState = "question2-window";
     displayWindows();
 });
 
 quizQuestion2WindowEl.addEventListener("click", function () {
-    startState = 'scores-and-initials-window';
+    startState = "scores-and-initials-window";
     displayWindows();
 });
 
 scoreAndInitialsPageButton.addEventListener("click", function () {
-    startState = 'scores-window';
+    startState = "scores-window";
     displayWindows();
 });
 
 scoresWindowButton.addEventListener("click", function () {
-    startState = 'start-window';
+    startState = "start-window";
     displayWindows();
 });
 
