@@ -229,19 +229,34 @@ question2ButtonD.addEventListener("click", function () {
 // START: Writing to local storage
 
 
+
 scoreAndInitialsPageButton.addEventListener("click", function (event) {
     event.preventDefault();
     if (initialsInput.value !== null) {
         var data = {
-            initials: initialsInput.value, 
+            initials: initialsInput.value,
             score: secondsLeft
         }
         var scores = JSON.parse(localStorage.getItem("scores")) || [];
         scores.push(data)
-        
+
         localStorage.setItem("scores", JSON.stringify(scores));
+
+        renderScores();
     }
+
 });
+
+function renderScores() {
+
+    var scores = JSON.parse(localStorage.getItem("scores")) || [];
+    
+    // if (lastGrade !== null) {
+    //   document.querySelector(".message").textContent = lastGrade.student +
+    //   ` received ${/^[aeiou]{1}/i.test(lastGrade.grade) ? 'an' : 'a'} ` + lastGrade.grade 
+    // }
+}
+
 
 
 // END: Writing to local storage
