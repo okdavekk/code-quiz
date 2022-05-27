@@ -1,91 +1,43 @@
-//START: Variables to indicate what window to start at or to toggle
-//START: to indicate what window to start at or to toggle
-//START: to indicate what window to start at or to toggle
-
 var startState = (
     "start-window"
-    // "question1-window"
-    // "question2-window"
-    // "scores-and-initials-window"
-    // "scores-window"
 )
 
-//END: to indicate what window to start at or to toggle
-//END: to indicate what window to start at or to toggle
-//END: to indicate what window to start at or to toggle
-
-
-
-//START: Other variables
-//START: Other variables
-//START: Other variables
 
 var secondsLeft = 100;
 
-//END: Other variables
-//END: Other variables
-//END: Other variables
-
-
 
 //START: Class tie ins from HTML to js variables
 //START: Class tie ins from HTML to js variables
 //START: Class tie ins from HTML to js variables
 
-//Start Window tie in from HTML to variable
 var startStateWindowEL = document.querySelector("#start-window");
-
-//Timer tie in from HTML to variable
 var theTimerWindowEl = document.querySelector("#timer");
-
-//Quiz question 1 tie in from HTML to variable
 var quizQuestion1WindowEl = document.querySelector("#question1-window");
-
-//Quiz question 2 tie in from HTML to variable
 var quizQuestion2WindowEl = document.querySelector("#question2-window");
-
-// Score and initials tie in from HTML to variable
 var scoreAndInitialsWindowEL = document.querySelector("#score-and-initials-window");
-
-// Score aggregate window tie in from HTML to variable
 var scoresWindowEL = document.querySelector("#scores-window");
-
-// The text field for initials 
 var initialsInput = document.querySelector("#text-box");
 
-
-
 //END: Class tie ins from HTML to js variables
 //END: Class tie ins from HTML to js variables
 //END: Class tie ins from HTML to js variables
-
 
 
 //START: Button tie ins from HTML to js variables
 //START: Button tie ins from HTML to js variables
 //START: Button tie ins from HTML to js variables
 
-//Start button
 var startButton = document.querySelector("#start-window");
-
-//Question 1 buttons
 var question1ButtonA = document.querySelector("#question1-buttonA")
 var question1ButtonB = document.querySelector("#question1-buttonB")
 var question1ButtonC = document.querySelector("#question1-buttonC")
 var question1ButtonD = document.querySelector("#question1-buttonD")
-
-//Question 2 buttons
 var question2ButtonA = document.querySelector("#question2-buttonA")
 var question2ButtonB = document.querySelector("#question2-buttonB")
 var question2ButtonC = document.querySelector("#question2-buttonC")
 var question2ButtonD = document.querySelector("#question2-buttonD")
-
-//Score and initials page button
 var scoreAndInitialsPageButton = document.querySelector("#submit-button")
-
-//Scores window buttons 
 var scoresWindowButton = document.querySelector("#scores-window")
-
 
 //END: Button tie ins from HTML to js variables
 //END: Button tie ins from HTML to js variables
@@ -99,7 +51,6 @@ var scoresWindowButton = document.querySelector("#scores-window")
 function setTheTimer() {
 
     timeDisplay();
-    //setInterval is a thing...  Its built in.
     var timerInterval = setInterval(
         function () {
             secondsLeft--;
@@ -114,27 +65,22 @@ function setTheTimer() {
                 quizQuestion2WindowEl.style.display = "none";
                 scoreAndInitialsWindowEL.style.display = "none";
                 scoresWindowEL.style.display = "none";
-
             }
 
             if (startState === "scores-and-initials-window") {
                 clearInterval(timerInterval);
             }
-
         }, 1000);
 
     function timeDisplay() {
         theTimerWindowEl.textContent = "You have " + secondsLeft + " seconds left until the game ends";
-
     }
-
 }
 
 
-
-//START: Timer function
-//START: Timer function
-//START: Timer function
+//END: Timer function
+//END: Timer function
+//END: Timer function
 
 
 //START: Window toggle scheme
@@ -148,7 +94,6 @@ function displayWindows() {
         quizQuestion2WindowEl.style.display = "none";
         scoreAndInitialsWindowEL.style.display = "none";
         scoresWindowEL.style.display = "none";
-
     }
 
     if (startState === "question1-window") {
@@ -158,7 +103,6 @@ function displayWindows() {
         quizQuestion2WindowEl.style.display = "none";
         scoreAndInitialsWindowEL.style.display = "none";
         scoresWindowEL.style.display = "none";
-
     }
 
     if (startState === "question2-window") {
@@ -168,7 +112,6 @@ function displayWindows() {
         quizQuestion2WindowEl.style.display = "block";
         scoreAndInitialsWindowEL.style.display = "none";
         scoresWindowEL.style.display = "none";
-
     }
 
     if (startState === "scores-and-initials-window") {
@@ -178,7 +121,6 @@ function displayWindows() {
         quizQuestion2WindowEl.style.display = "none";
         scoreAndInitialsWindowEL.style.display = "block";
         scoresWindowEL.style.display = "none";
-
     }
 
     if (startState === "scores-window") {
@@ -188,7 +130,6 @@ function displayWindows() {
         quizQuestion2WindowEl.style.display = "none";
         scoreAndInitialsWindowEL.style.display = "none";
         scoresWindowEL.style.display = "block";
-
     }
 
 }
@@ -196,8 +137,6 @@ function displayWindows() {
 //END: Window toggle scheme
 //END: Window toggle scheme
 //END: Window toggle scheme
-
-
 
 
 //START: Button click listening scheme for main driver buttons
@@ -212,19 +151,16 @@ startButton.addEventListener("click", function () {
     startState = "question1-window";
     displayWindows();
     setTheTimer();
-
 });
 
 quizQuestion1WindowEl.addEventListener("click", function () {
     startState = "question2-window";
     displayWindows();
-
 });
 
 quizQuestion2WindowEl.addEventListener("click", function () {
     startState = "scores-and-initials-window";
     displayWindows();
-
 });
 
 scoreAndInitialsPageButton.addEventListener("click", function () {
@@ -257,36 +193,30 @@ question1ButtonB.addEventListener("click", function () {
     var penalty = 5;
     secondsLeft -= penalty;
     console.log(secondsLeft);
-
 });
 
 question1ButtonD.addEventListener("click", function () {
     var penalty = 5;
     secondsLeft -= penalty;
     console.log(secondsLeft);
-
 });
 
 question2ButtonA.addEventListener("click", function () {
     var penalty = 5;
     secondsLeft -= penalty;
     console.log(secondsLeft);
-
 });
 
 question2ButtonC.addEventListener("click", function () {
     var penalty = 5;
     secondsLeft -= penalty;
     console.log(secondsLeft);
-
 });
 
 question2ButtonD.addEventListener("click", function () {
     var penalty = 5;
     secondsLeft -= penalty;
     console.log(secondsLeft);
-
-
 });
 
 //END: Button click listening scheme for wrong button decrement 
@@ -294,49 +224,29 @@ question2ButtonD.addEventListener("click", function () {
 //END: Button click listening scheme for wrong button decrement 
 
 
-
 // START: Writing to local storage
 // START: Writing to local storage
 // START: Writing to local storage
 
 
-scoreAndInitialsPageButton.addEventListener("click", function () {
-    saveToLocalStorage();
-
+scoreAndInitialsPageButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (initialsInput.value !== null) {
+        var data = {
+            initials: initialsInput.value, 
+            score: secondsLeft
+        }
+        var scores = JSON.parse(localStorage.getItem("scores")) || [];
+        scores.push(data)
+        
+        localStorage.setItem("scores", JSON.stringify(scores));
+    }
 });
 
 
-function saveToLocalStorage(initials) {
-    var initials = initialsInput;
-    localStorage.setItem("initials", JSON.stringify(initials));
-    // var savedItem = localStorage.getItem("test");
-    // var parsedItem = JSON.parse(savedItem);
-    console.log(initialsInput);
-
-}
-
-function saveToLocalStorage(initials) {
-    var initials = initialsInput;
-    localStorage.setItem("initials", JSON.stringify(initials));
-    // var savedItem = localStorage.getItem("test");
-    // var parsedItem = JSON.parse(savedItem);
-    console.log(initialsInput);
-
-}
-
-
-
-saveToLocalStorage();
-
-
 // END: Writing to local storage
 // END: Writing to local storage
 // END: Writing to local storage
-
-
-
-
-
 
 
 //Go Go Go
