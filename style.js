@@ -64,25 +64,25 @@ var scoresWindowEL = document.querySelector("#scores-window");
 //START: Button tie ins from HTML to js variables
 
 //Start button
-var startButton = document.querySelector("#start-window button");
+var startButton = document.querySelector("#start-window");
 
 //Question 1 buttons
-var question1ButtonA = document.querySelector("#question1-buttonA button")
-var question1ButtonB = document.querySelector("#question1-buttonB button")
-var question1ButtonC = document.querySelector("#question1-buttonC button")
-var question1ButtonD = document.querySelector("#question1-buttonD button")
+var question1ButtonA = document.querySelector("#question1-buttonA")
+var question1ButtonB = document.querySelector("#question1-buttonB")
+var question1ButtonC = document.querySelector("#question1-buttonC")
+var question1ButtonD = document.querySelector("#question1-buttonD")
 
 //Question 2 buttons
-var question2ButtonA = document.querySelector("#question2-buttonA button")
-var question2ButtonB = document.querySelector("#question2-buttonB button")
-var question2ButtonC = document.querySelector("#question2-buttonC button")
-var question2ButtonD = document.querySelector("#question2-buttonD button")
+var question2ButtonA = document.querySelector("#question2-buttonA")
+var question2ButtonB = document.querySelector("#question2-buttonB")
+var question2ButtonC = document.querySelector("#question2-buttonC")
+var question2ButtonD = document.querySelector("#question2-buttonD")
 
 //Score and initials page button
-var scoreAndInitialsPageButton = document.querySelector("#score-and-initials-window button")
+var scoreAndInitialsPageButton = document.querySelector("#score-and-initials-window")
 
 //Scores window buttons 
-var scoresWindowButton = document.querySelector("#scores-window button")
+var scoresWindowButton = document.querySelector("#scores-window")
 
 //END: Button tie ins from HTML to js variables
 //END: Button tie ins from HTML to js variables
@@ -123,7 +123,12 @@ function setTheTimer() {
     function timeDisplay() {
         theTimerWindowEl.textContent = "You have " + secondsLeft + " seconds left until the game ends";
 
+     
+
     }
+
+  
+
 
 }
 
@@ -195,9 +200,14 @@ function displayWindows() {
 //END: Window toggle scheme
 
 
-//START: Button click listening scheme
-//START: Button click listening scheme
-//START: Button click listening scheme
+
+
+
+
+
+//START: Button click listening scheme for main driver buttons
+//START: Button click listening scheme for main driver buttons
+//START: Button click listening scheme for main driver buttons
 
 function init() {
     displayWindows();
@@ -214,7 +224,6 @@ quizQuestion1WindowEl.addEventListener("click", function () {
     startState = "question2-window";
     displayWindows();
 
-
 });
 
 quizQuestion2WindowEl.addEventListener("click", function () {
@@ -230,26 +239,81 @@ scoreAndInitialsPageButton.addEventListener("click", function () {
 
 scoresWindowButton.addEventListener("click", function () {
     startState = "start-window";
+    secondsLeft = 100;
     displayWindows();
 });
 
-//END: Button click listening scheme
-//END: Button click listening scheme
-//END: Button click listening scheme
+//END: Button click listening scheme scheme for main driver buttons
+//END: Button click listening scheme scheme for main driver buttons
+//END: Button click listening scheme scheme for main driver buttons
 
 
 
 
 
+//START: Button click listening scheme for wrong button decrement 
+//START: Button click listening scheme for wrong button decrement 
+//START: Button click listening scheme for wrong button decrement 
+
+question1ButtonA.addEventListener("click", function () {
+    var penalty = 5; 
+    secondsLeft -= penalty;
+    console.log (secondsLeft);
+});
+
+question1ButtonB.addEventListener("click", function () {
+    var penalty = 5; 
+    secondsLeft -= penalty;
+    console.log (secondsLeft);
+
+});
+
+question1ButtonD.addEventListener("click", function () {
+    var penalty = 5; 
+    secondsLeft -= penalty;
+    console.log (secondsLeft);
+
+});
+
+question2ButtonA.addEventListener("click", function () {
+    var penalty = 5; 
+    secondsLeft -= penalty;
+    console.log (secondsLeft);
+
+});
+
+question2ButtonC.addEventListener("click", function () {
+    var penalty = 5; 
+    secondsLeft -= penalty;
+    console.log (secondsLeft);
+
+});
+
+question2ButtonD.addEventListener("click", function () {
+    var penalty = 5; 
+    secondsLeft -= penalty;
+    console.log (secondsLeft);
+    
+
+});
+
+//END: Button click listening scheme for wrong button decrement 
+//END: Button click listening scheme for wrong button decrement 
+//END: Button click listening scheme for wrong button decrement 
 
 
 
 
-// question1ButtonA.addEventListener("click", function () {
-//     secondsLeft -= 5;
+function saveToLocalStorage(initials) {
+    localStorage.setItem("initials", JSON.stringify([]))
+    // var savedItem = localStorage.getItem("test")
+    // var parsedItem = JSON.parse(savedItem)
+    console.log(typeof parsedItem)
 
-// });
 
+}
+
+saveToLocalStorage();
 
 
 
