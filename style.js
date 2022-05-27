@@ -310,11 +310,9 @@ function saveToLocalStorage(initials) {
     // var parsedItem = JSON.parse(savedItem)
     console.log(typeof parsedItem)
 
-
 }
 
 saveToLocalStorage();
-
 
 
 //Go Go Go
