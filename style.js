@@ -16,7 +16,6 @@ var startState = (
 
 
 
-
 //START: Other variables
 //START: Other variables
 //START: Other variables
@@ -26,8 +25,6 @@ var secondsLeft = 100;
 //END: Other variables
 //END: Other variables
 //END: Other variables
-
-
 
 
 
@@ -52,6 +49,11 @@ var scoreAndInitialsWindowEL = document.querySelector("#score-and-initials-windo
 
 // Score aggregate window tie in from HTML to variable
 var scoresWindowEL = document.querySelector("#scores-window");
+
+// The text field for initials 
+var initialsInput = document.querySelector("#text-box");
+
+
 
 //END: Class tie ins from HTML to js variables
 //END: Class tie ins from HTML to js variables
@@ -79,10 +81,11 @@ var question2ButtonC = document.querySelector("#question2-buttonC")
 var question2ButtonD = document.querySelector("#question2-buttonD")
 
 //Score and initials page button
-var scoreAndInitialsPageButton = document.querySelector("#score-and-initials-window")
+var scoreAndInitialsPageButton = document.querySelector("#submit-button")
 
 //Scores window buttons 
 var scoresWindowButton = document.querySelector("#scores-window")
+
 
 //END: Button tie ins from HTML to js variables
 //END: Button tie ins from HTML to js variables
@@ -123,12 +126,7 @@ function setTheTimer() {
     function timeDisplay() {
         theTimerWindowEl.textContent = "You have " + secondsLeft + " seconds left until the game ends";
 
-     
-
     }
-
-  
-
 
 }
 
@@ -202,9 +200,6 @@ function displayWindows() {
 
 
 
-
-
-
 //START: Button click listening scheme for main driver buttons
 //START: Button click listening scheme for main driver buttons
 //START: Button click listening scheme for main driver buttons
@@ -248,52 +243,49 @@ scoresWindowButton.addEventListener("click", function () {
 //END: Button click listening scheme scheme for main driver buttons
 
 
-
-
-
 //START: Button click listening scheme for wrong button decrement 
 //START: Button click listening scheme for wrong button decrement 
 //START: Button click listening scheme for wrong button decrement 
 
 question1ButtonA.addEventListener("click", function () {
-    var penalty = 5; 
+    var penalty = 5;
     secondsLeft -= penalty;
-    console.log (secondsLeft);
+    console.log(secondsLeft);
 });
 
 question1ButtonB.addEventListener("click", function () {
-    var penalty = 5; 
+    var penalty = 5;
     secondsLeft -= penalty;
-    console.log (secondsLeft);
+    console.log(secondsLeft);
 
 });
 
 question1ButtonD.addEventListener("click", function () {
-    var penalty = 5; 
+    var penalty = 5;
     secondsLeft -= penalty;
-    console.log (secondsLeft);
+    console.log(secondsLeft);
 
 });
 
 question2ButtonA.addEventListener("click", function () {
-    var penalty = 5; 
+    var penalty = 5;
     secondsLeft -= penalty;
-    console.log (secondsLeft);
+    console.log(secondsLeft);
 
 });
 
 question2ButtonC.addEventListener("click", function () {
-    var penalty = 5; 
+    var penalty = 5;
     secondsLeft -= penalty;
-    console.log (secondsLeft);
+    console.log(secondsLeft);
 
 });
 
 question2ButtonD.addEventListener("click", function () {
-    var penalty = 5; 
+    var penalty = 5;
     secondsLeft -= penalty;
-    console.log (secondsLeft);
-    
+    console.log(secondsLeft);
+
 
 });
 
@@ -303,16 +295,48 @@ question2ButtonD.addEventListener("click", function () {
 
 
 
+// START: Writing to local storage
+// START: Writing to local storage
+// START: Writing to local storage
+
+
+scoreAndInitialsPageButton.addEventListener("click", function () {
+    saveToLocalStorage();
+
+});
+
 
 function saveToLocalStorage(initials) {
-    localStorage.setItem("initials", JSON.stringify([]))
-    // var savedItem = localStorage.getItem("test")
-    // var parsedItem = JSON.parse(savedItem)
-    console.log(typeof parsedItem)
+    var initials = initialsInput;
+    localStorage.setItem("initials", JSON.stringify(initials));
+    // var savedItem = localStorage.getItem("test");
+    // var parsedItem = JSON.parse(savedItem);
+    console.log(initialsInput);
 
 }
 
+function saveToLocalStorage(initials) {
+    var initials = initialsInput;
+    localStorage.setItem("initials", JSON.stringify(initials));
+    // var savedItem = localStorage.getItem("test");
+    // var parsedItem = JSON.parse(savedItem);
+    console.log(initialsInput);
+
+}
+
+
+
 saveToLocalStorage();
+
+
+// END: Writing to local storage
+// END: Writing to local storage
+// END: Writing to local storage
+
+
+
+
+
 
 
 //Go Go Go
