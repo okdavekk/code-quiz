@@ -251,10 +251,6 @@ function renderScores() {
 
     var scores = JSON.parse(localStorage.getItem("scores")) || [];
     
-    // if (lastGrade !== null) {
-    //   document.querySelector(".message").textContent = lastGrade.student +
-    //   ` received ${/^[aeiou]{1}/i.test(lastGrade.grade) ? 'an' : 'a'} ` + lastGrade.grade 
-    // }
 }
 
 
